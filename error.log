@@ -1,0 +1,15 @@
+UPDATE nx.json
+
+@nrwl/nx-cloud tried to access @nrwl/tao, but it isn't declared in its dependencies; this makes the require call ambiguous and unsound.
+
+Required package: @nrwl/tao (via "@nrwl/tao/src/utils/app-root")
+Required by: @nrwl/nx-cloud@npm:14.0.5 (via /home/alvin/work/dev/react-nx/.yarn/cache/@nrwl-nx-cloud-npm-14.0.5-23f26df776-f48f6746c3.zip/node_modules/@nrwl/nx-cloud/lib/utilities/)
+
+Require stack:
+- /home/alvin/work/dev/react-nx/.yarn/cache/@nrwl-nx-cloud-npm-14.0.5-23f26df776-f48f6746c3.zip/node_modules/@nrwl/nx-cloud/lib/utilities/nx-imports.js
+- /home/alvin/work/dev/react-nx/.yarn/cache/@nrwl-nx-cloud-npm-14.0.5-23f26df776-f48f6746c3.zip/node_modules/@nrwl/nx-cloud/lib/generators/init/init.js
+- /home/alvin/work/dev/react-nx/.yarn/unplugged/nx-npm-14.1.9-e27c0b545a/node_modules/nx/src/config/workspaces.js
+- /home/alvin/work/dev/react-nx/.yarn/unplugged/nx-npm-14.1.9-e27c0b545a/node_modules/nx/src/command-line/generate.js
+- /home/alvin/work/dev/react-nx/.yarn/unplugged/nx-npm-14.1.9-e27c0b545a/node_modules/nx/src/command-line/nx-commands.js
+- /home/alvin/work/dev/react-nx/.yarn/unplugged/nx-npm-14.1.9-e27c0b545a/node_modules/nx/bin/init-local.js
+- /home/alvin/work/dev/react-nx/.yarn/unplugged/nx-npm-14.1.9-e27c0b545a/node_modules/nx/bin/nx.js

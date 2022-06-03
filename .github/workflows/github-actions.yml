@@ -1,0 +1,22 @@
+name: CI
+on:
+  push:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  main:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - uses: nrwl/nx-set-shas@v2
+      - run: yarn install --immutable --immutable-cache --check-cache
+
+      - run: yarn nx workspace-lint
+      - run: yarn nx format:check
+      - run: yarn nx affected --target=lint --base=HEAD~1 --parallel=3
+      - run: yarn nx affected --target=test --base=HEAD~1 --parallel=3 --ci --code-coverage
+      - run: yarn nx affected --target=build --base=HEAD~1 --parallel=3
