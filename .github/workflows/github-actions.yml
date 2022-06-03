@@ -16,7 +16,7 @@ jobs:
       - run: yarn install --immutable --immutable-cache --check-cache
 
       - run: yarn nx workspace-lint
-      - run: yarn nx format:check --verbose
+      - run: yarn nx format:write --verbose
       - run: yarn nx affected --target=lint --base= origin/main~1 --head= origin/main --parallel=3
       - run: yarn nx affected --target=test --base= origin/main~1 --head= origin/main --parallel=3 --ci --code-coverage
       - run: yarn nx affected --target=build --base= origin/main~1 --head= origin/main --parallel=3
