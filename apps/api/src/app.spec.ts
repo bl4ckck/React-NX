@@ -20,6 +20,7 @@ describe('Book Store Sekolah Dasar API', () => {
 
     expect(response.statusCode).toBe<number>(200);
     expect(response.json()).toHaveProperty<string>('hello');
+    expect(response.body).toBe('{\"hello\":\"world\"}');
     expect(response.json()).toMatchObject<HelloWorldType>({ hello: 'world' });
   });
 });
