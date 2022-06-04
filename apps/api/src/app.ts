@@ -1,22 +1,23 @@
-import Fastify from 'fastify'
-import type { FastifyInstance, FastifyServerOptions } from 'fastify'
+import Fastify from 'fastify';
+import type { FastifyInstance, FastifyServerOptions } from 'fastify';
 
 export function build(opts?: FastifyServerOptions): FastifyInstance {
   const fastify = Fastify({
     logger: {
-      prettyPrint: process.env.NODE_ENV === 'development'
-        ? {
-          translateTime: 'HH:MM:ss Z',
-          ignore: 'pid,hostname'
-        }
-        : false
+      prettyPrint:
+        process.env.NODE_ENV === 'development'
+          ? {
+              translateTime: 'HH:MM:ss Z',
+              ignore: 'pid,hostname',
+            }
+          : false,
     },
-    ...opts
+    ...opts,
   });
 
   // Hello world
   fastify.get('/', function (request, reply) {
-    reply.send({ hello: 'world' })
+    reply.send({ hello: 'world' });
   });
 
   return fastify;

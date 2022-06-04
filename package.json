@@ -5,7 +5,10 @@
   "scripts": {
     "start": "nx serve",
     "build": "nx build",
-    "test": "nx test"
+    "test": "nx test",
+    "test:all": "nx run-many --target=test --all",
+    "test:all:prettier": "nx run-many --target=test --all && nx format:write",
+    "test:ci": "nx affected --target=test --parallel=3 --ci --code-coverage"
   },
   "private": true,
   "dependencies": {
