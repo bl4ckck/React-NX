@@ -1,13 +1,12 @@
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-import styles from './app.module.scss';
-import NxWelcome from './nx-welcome';
+import { Routes, Route } from 'react-router-dom';
+
+import { BookstoreHome } from '@react-nx/bookstore/home';
 
 export function App() {
   return (
-    <>
-      <NxWelcome title="bookstore" />
-      <div />
-    </>
+    <Routes>
+      <Route path="/" element={<BookstoreHome />} />
+    </Routes>
   );
 }
 

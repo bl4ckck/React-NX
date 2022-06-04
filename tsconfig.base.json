@@ -14,7 +14,18 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@react-nx/bookstore/home": ["libs/bookstore/home/src/index.ts"],
+      "@react-nx/bookstore/shared/ui": [
+        "libs/bookstore/shared/ui/src/index.ts"
+      ],
+      "@react-nx/bookstore/shared/utils-testing": [
+        "libs/bookstore/shared/utils-testing/src/index.ts"
+      ],
+      "@react-nx/bookstore/theme": [
+        "libs/bookstore/theme/src/lib/styles/main.scss"
+      ]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
