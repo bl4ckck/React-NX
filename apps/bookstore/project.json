@@ -19,7 +19,7 @@
           "apps/bookstore/src/favicon.ico",
           "apps/bookstore/src/assets"
         ],
-        "styles": ["apps/bookstore/src/styles.scss"],
+        "styles": ["libs/bookstore/theme/src/lib/styles/main.scss"],
         "scripts": [],
         "webpackConfig": "@nrwl/react/plugins/webpack"
       },
@@ -76,6 +76,37 @@
       "options": {
         "jestConfig": "apps/bookstore/jest.config.ts",
         "passWithNoTests": true
+      }
+    },
+    "storybook": {
+      "executor": "@nrwl/storybook:storybook",
+      "options": {
+        "uiFramework": "@storybook/react",
+        "port": 4400,
+        "config": {
+          "configFolder": "apps/bookstore/.storybook"
+        }
+      },
+      "configurations": {
+        "ci": {
+          "quiet": true
+        }
+      }
+    },
+    "build-storybook": {
+      "executor": "@nrwl/storybook:build",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "uiFramework": "@storybook/react",
+        "outputPath": "dist/storybook/bookstore",
+        "config": {
+          "configFolder": "apps/bookstore/.storybook"
+        }
+      },
+      "configurations": {
+        "ci": {
+          "quiet": true
+        }
       }
     }
   },
