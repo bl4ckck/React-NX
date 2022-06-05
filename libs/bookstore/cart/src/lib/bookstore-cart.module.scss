@@ -1,7 +1,9 @@
-/*
- * Replace this with your own classes
- *
- * e.g.
- * .container {
- * }
-*/
+@use 'libs/bookstore/theme/src/lib/styles/layouts/_main-layout';
+
+.container {
+  @extend .main-layout;
+
+  .total {
+    padding: 1rem 0;
+  }
+}

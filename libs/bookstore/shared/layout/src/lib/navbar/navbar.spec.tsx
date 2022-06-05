@@ -11,6 +11,8 @@ import { Book } from '@react-nx/bookstore/book';
 import { Cart } from '@react-nx/bookstore/cart';
 import { renderWrapper } from '@react-nx/bookstore/shared/utils-testing';
 import Navbar from './navbar';
+import { Provider } from 'react-redux';
+import { store } from '@react-nx/bookstore/shared/redux';
 
 describe('Navbar', () => {
   it('should render successfully', () => {
@@ -22,15 +24,17 @@ describe('Navbar', () => {
     const history = createMemoryHistory({ initialEntries: ['/'] });
     const renderRoute = () => {
       return (
-        <Router location={history.location} navigator={history}>
-          <Layout>
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/books" element={<Book />} />
-              <Route path="/cart" element={<Cart />} />
-            </Routes>
-          </Layout>
-        </Router>
+        <Provider store={store}>
+          <Router location={history.location} navigator={history}>
+            <Layout>
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/books" element={<Book />} />
+                <Route path="/cart" element={<Cart />} />
+              </Routes>
+            </Layout>
+          </Router>
+        </Provider>
       );
     };
     render(renderRoute());

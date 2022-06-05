@@ -1,3 +1,5 @@
+@use '../abstracts/variables' as v;
+
 .btn-base {
   cursor: pointer;
   display: block;
@@ -8,4 +10,11 @@
 
 .btn-base:hover {
   filter: brightness(0.85);
+}
+
+.btn-main {
+  @extend .btn-base;
+  padding: 0.5rem;
+  border-radius: 0.3rem;
+  border: 1px solid v.$gray-dark;
 }
