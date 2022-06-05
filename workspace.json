@@ -4,8 +4,11 @@
   "projects": {
     "api": "apps/api",
     "bookstore": "apps/bookstore",
+    "bookstore-book": "libs/bookstore/book",
+    "bookstore-cart": "libs/bookstore/cart",
     "bookstore-e2e": "apps/bookstore-e2e",
     "bookstore-home": "libs/bookstore/home",
+    "bookstore-shared-layout": "libs/bookstore/shared/layout",
     "bookstore-shared-ui": "libs/bookstore/shared/ui",
     "bookstore-shared-utils-testing": "libs/bookstore/shared/utils-testing",
     "bookstore-theme": "libs/bookstore/theme"

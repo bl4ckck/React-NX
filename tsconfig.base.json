@@ -15,7 +15,13 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@react-nx/bookstore/app": ["apps/bookstore/src/app/app"],
+      "@react-nx/bookstore/book": ["libs/bookstore/book/src/index.ts"],
+      "@react-nx/bookstore/cart": ["libs/bookstore/cart/src/index.ts"],
       "@react-nx/bookstore/home": ["libs/bookstore/home/src/index.ts"],
+      "@react-nx/bookstore/shared/layout": [
+        "libs/bookstore/shared/layout/src/index.ts"
+      ],
       "@react-nx/bookstore/shared/ui": [
         "libs/bookstore/shared/ui/src/index.ts"
       ],
