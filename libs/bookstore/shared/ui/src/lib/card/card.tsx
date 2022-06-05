@@ -1,5 +1,6 @@
 import type { BookType } from '@react-nx/bookstore/shared/data-access';
-import React from 'react';
+import { cartActions } from '@react-nx/bookstore/shared/redux';
+import { useDispatch } from 'react-redux';
 import styles from './card.module.scss';
 
 /* eslint-disable-next-line */
@@ -9,21 +10,30 @@ export interface CardProps {
 }
 type ButtonElType = React.MouseEvent<HTMLButtonElement, MouseEvent>;
 
-export function Card({
-  book: { author, title, rating, price },
-  type = 'book',
-  ...props
-}: CardProps) {
+export function Card({ book, type = 'book' }: CardProps) {
+  // destructuring book props
+  const { id, title, author, price, rating } = book;
+
+  // conditions
   const isBook = type === 'book';
   const btnTitle = isBook ? 'Add to cart' : 'Remove';
+
+  /**
+   * events
+   */
+  const dispatch = useDispatch();
 
   const addToCart = (e: ButtonElType) => {
     e.preventDefault();
     console.log('add to cart');
+    dispatch(cartActions.add(book));
+    alert(`Book [${id}] "${title}" added to cart!`);
   };
+
   const removeCartItem = (e: ButtonElType) => {
     e.preventDefault();
     console.log('remove from cart');
+    dispatch(cartActions.remove(id));
   };
 
   return (

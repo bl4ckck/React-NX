@@ -25,6 +25,9 @@
       "@react-nx/bookstore/shared/layout": [
         "libs/bookstore/shared/layout/src/index.ts"
       ],
+      "@react-nx/bookstore/shared/redux": [
+        "libs/bookstore/shared/redux/src/index.ts"
+      ],
       "@react-nx/bookstore/shared/ui": [
         "libs/bookstore/shared/ui/src/index.ts"
       ],
