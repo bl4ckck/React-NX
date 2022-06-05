@@ -42,6 +42,6 @@ describe('Navbar', () => {
     // switch page to /books
     await user.click(screen.getByTestId('book-link'));
     render(renderRoute());
-    expect(screen.getByText(/Welcome to Book!/i)).toBeInTheDocument();
+    expect(screen.getByTestId('book-title-test')).toBeInTheDocument();
   });
 });

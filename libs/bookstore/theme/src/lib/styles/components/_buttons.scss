@@ -1,0 +1,11 @@
+.btn-base {
+  cursor: pointer;
+  display: block;
+  border: none;
+  text-decoration: none;
+  transition-duration: 0.4s;
+}
+
+.btn-base:hover {
+  filter: brightness(0.85);
+}

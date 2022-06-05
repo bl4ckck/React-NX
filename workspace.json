@@ -8,6 +8,7 @@
     "bookstore-cart": "libs/bookstore/cart",
     "bookstore-e2e": "apps/bookstore-e2e",
     "bookstore-home": "libs/bookstore/home",
+    "bookstore-shared-data-access": "libs/bookstore/shared/data-access",
     "bookstore-shared-layout": "libs/bookstore/shared/layout",
     "bookstore-shared-ui": "libs/bookstore/shared/ui",
     "bookstore-shared-utils-testing": "libs/bookstore/shared/utils-testing",

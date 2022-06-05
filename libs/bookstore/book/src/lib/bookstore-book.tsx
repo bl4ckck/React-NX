@@ -1,12 +1,16 @@
+import { bookFixtureList } from '@react-nx/bookstore/shared/data-access';
+import { Card } from '@react-nx/bookstore/shared/ui';
 import styles from './bookstore-book.module.scss';
 
-/* eslint-disable-next-line */
-export interface BookProps {}
-
-export function Book(props: BookProps) {
+export function Book() {
   return (
     <div className={styles['container']}>
-      <h1>Welcome to Book!</h1>
+      <h1 data-testid="book-title-test">Books</h1>
+      <div className={styles['wrapper']}>
+        {bookFixtureList.map((book) => (
+          <Card key={book.id} book={book} />
+        ))}
+      </div>
     </div>
   );
 }

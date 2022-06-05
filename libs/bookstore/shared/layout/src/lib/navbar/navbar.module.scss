@@ -5,6 +5,7 @@
   @include mix.flex-center('column', false);
   width: 100%;
   position: fixed;
+  z-index: 1;
   top: 0;
   padding: 1rem 0.5rem;
   color: white;
