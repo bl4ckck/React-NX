@@ -1,0 +1,51 @@
+@use 'libs/bookstore/theme/src/lib/styles/abstracts/_variables' as v;
+@use 'libs/bookstore/theme/src/lib/styles/abstracts/_mixins' as mix;
+
+.container {
+  @include mix.flex-center('column', false);
+  width: 100%;
+  position: fixed;
+  top: 0;
+  padding: 1rem 0.5rem;
+  color: white;
+  background-color: v.$blue-main;
+
+  &__logo {
+    padding: 0 1rem;
+    border-right: 2px solid v.$blue-light;
+    &-title {
+      font-size: 1.5rem;
+      font-weight: bold;
+      @include mix.breakpoint('md') {
+        font-size: 2rem;
+      }
+    }
+  }
+
+  &__nav {
+    padding-left: 0.5rem;
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      cursor: pointer;
+
+      li {
+        float: left;
+
+        a {
+          color: white;
+          font-weight: 500;
+          text-align: center;
+          padding: 0 0.3rem;
+          text-decoration: none;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+}
