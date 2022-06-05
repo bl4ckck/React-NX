@@ -1,0 +1,42 @@
+@use 'libs/bookstore/theme/src/lib/styles/abstracts/_variables' as v;
+@use 'libs/bookstore/theme/src/lib/styles/abstracts/_mixins' as mix;
+@use 'libs/bookstore/theme/src/lib/styles/components/_buttons';
+
+.card {
+  @include mix.flex-center('row', false);
+  padding: 1rem;
+  border-bottom: 1px solid v.$gray-dark;
+
+  &__title {
+    flex: 1 1 0%;
+    padding-right: 1rem;
+  }
+
+  &__detail {
+    @include mix.flex-center('row', false);
+
+    &-rating {
+      color: v.$gray-dark;
+      font-weight: 600;
+    }
+
+    &-price {
+      color: v.$green;
+      font-weight: 600;
+      padding: 1rem;
+
+      &-cart {
+        @extend .card__detail-price;
+        color: black;
+        font-weight: 400;
+      }
+    }
+
+    &-add-btn {
+      @extend .btn-base;
+      padding: 0.5rem;
+      border-radius: 0.3rem;
+      border: 1px solid v.$gray-dark;
+    }
+  }
+}
