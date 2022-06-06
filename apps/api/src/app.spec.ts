@@ -7,15 +7,16 @@ type HelloWorldType = {
 
 describe('Book Store Sekolah Dasar API', () => {
   let app: FastifyInstance;
+  const PREFIX = '/api/v1';
 
   beforeAll(() => {
     app = build();
   });
 
-  test('should return hello world', async () => {
+  it('should return hello world', async () => {
     const response = await app.inject({
       method: 'GET',
-      url: '/',
+      url: `${PREFIX}/`,
     });
 
     expect(response.statusCode).toBe<number>(200);
