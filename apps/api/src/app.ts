@@ -1,6 +1,6 @@
 import type { FastifyInstance, FastifyServerOptions } from 'fastify';
 import Fastify from 'fastify';
-import fastifyCors from "@fastify/cors";
+import fastifyCors from '@fastify/cors';
 import { corsConfig } from '@react-nx/api/core';
 import { v1 } from './routes/v1';
 

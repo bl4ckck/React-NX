@@ -24,7 +24,7 @@ export const cartAdapter = createEntityAdapter<BookType>();
 
 export const checkout = createAsyncThunk<OrderType, BookType[]>(
   'cart/fetchOrderId',
-  async (items) => (await createCheckout(items)).data as OrderType,
+  async (items) => (await createCheckout(items)).data as OrderType
 );
 
 export const initialCartState: CartState = cartAdapter.getInitialState({

@@ -1,17 +1,20 @@
-import { FastifyInstance, FastifyPluginCallback, FastifyRegisterOptions, FastifyServerOptions } from "fastify";
+import {
+  FastifyInstance,
+  FastifyPluginCallback,
+  FastifyRegisterOptions,
+  FastifyServerOptions,
+} from 'fastify';
 import Fastify from 'fastify';
 
-function build(
-  opts?: FastifyServerOptions
-): FastifyInstance {
+function build(opts?: FastifyServerOptions): FastifyInstance {
   const fastify = Fastify({
     logger: {
       prettyPrint:
         process.env.NODE_ENV === 'development'
           ? {
-            translateTime: 'HH:MM:ss Z',
-            ignore: 'pid,hostname',
-          }
+              translateTime: 'HH:MM:ss Z',
+              ignore: 'pid,hostname',
+            }
           : false,
     },
     ...opts,

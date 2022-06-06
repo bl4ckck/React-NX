@@ -1,7 +1,10 @@
 import { apiTest } from '@react-nx/api/core';
-import { bookFixtureList, orderFixture } from '@react-nx/bookstore/shared/data-access';
+import {
+  bookFixtureList,
+  orderFixture,
+} from '@react-nx/bookstore/shared/data-access';
 import { FastifyInstance } from 'fastify';
-import { orderRoute } from './api'
+import { orderRoute } from './api';
 
 describe('orderRoute', () => {
   let app: FastifyInstance;
