@@ -3,6 +3,9 @@
   "version": 2,
   "projects": {
     "api": "apps/api",
+    "api-book": "libs/api/book",
+    "api-core": "libs/api/core",
+    "api-order": "libs/api/order",
     "bookstore": "apps/bookstore",
     "bookstore-book": "libs/bookstore/book",
     "bookstore-cart": "libs/bookstore/cart",

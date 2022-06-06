@@ -1,5 +1,5 @@
 import type { BookType } from '@react-nx/bookstore/shared/data-access';
-import { cartActions } from '@react-nx/bookstore/shared/redux';
+import { AppDispatch, cartActions } from '@react-nx/bookstore/shared/redux';
 import { useDispatch } from 'react-redux';
 import styles from './card.module.scss';
 
@@ -21,18 +21,16 @@ export function Card({ book, type = 'book' }: CardProps) {
   /**
    * events
    */
-  const dispatch = useDispatch();
+  const dispatch = useDispatch<AppDispatch>();
 
   const addToCart = (e: ButtonElType) => {
     e.preventDefault();
-    console.log('add to cart');
     dispatch(cartActions.add(book));
     alert(`Book [${id}] "${title}" added to cart!`);
   };
 
   const removeCartItem = (e: ButtonElType) => {
     e.preventDefault();
-    console.log('remove from cart');
     dispatch(cartActions.remove(id));
   };
 

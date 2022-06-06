@@ -15,6 +15,9 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@react-nx/api/book": ["libs/api/book/src/index.ts"],
+      "@react-nx/api/core": ["libs/api/core/src/index.ts"],
+      "@react-nx/api/order": ["libs/api/order/src/index.ts"],
       "@react-nx/bookstore/app": ["apps/bookstore/src/app/app"],
       "@react-nx/bookstore/book": ["libs/bookstore/book/src/index.ts"],
       "@react-nx/bookstore/cart": ["libs/bookstore/cart/src/index.ts"],

@@ -1,6 +1,5 @@
 import {
   AppDispatch,
-  cartActions,
   checkout,
   selectAllCart,
   selectOrderId,

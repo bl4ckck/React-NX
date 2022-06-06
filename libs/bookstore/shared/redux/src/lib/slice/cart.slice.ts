@@ -1,5 +1,6 @@
-import type {
+import {
   BookType,
+  createCheckout,
   OrderType,
 } from '@react-nx/bookstore/shared/data-access';
 import {
@@ -23,7 +24,7 @@ export const cartAdapter = createEntityAdapter<BookType>();
 
 export const checkout = createAsyncThunk<OrderType, BookType[]>(
   'cart/fetchOrderId',
-  (items) => Promise.resolve({ orderId: 'order-id-123' })
+  async (items) => (await createCheckout(items)).data as OrderType,
 );
 
 export const initialCartState: CartState = cartAdapter.getInitialState({
