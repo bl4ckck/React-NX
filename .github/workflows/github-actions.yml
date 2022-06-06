@@ -14,9 +14,10 @@ jobs:
           fetch-depth: 0
       - uses: nrwl/nx-set-shas@v2
       - run: yarn install --immutable --immutable-cache --check-cache
-
+      - name: Running backend for testing on port 3000
+        run: node dist/apps/api/main.js
       - run: yarn nx workspace-lint
-      - run: yarn nx format:write
+      - run: yarn nx format:check
       - run: yarn nx affected --target=lint --parallel=3
       - run: yarn nx affected --target=test --parallel=3 --ci --code-coverage
       - run: yarn nx affected --target=build --parallel=3
